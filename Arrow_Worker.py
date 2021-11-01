@@ -1,7 +1,7 @@
 import pyautogui
+from PIL import Image, ImageGrab
 import keyboard
 import os
-import time
 import threading
 
 class Arrow_Worker():
@@ -31,5 +31,3 @@ class Arrow_Worker():
                     keyboard.press_and_release(self.key)
                 else:
                     pyautogui.press(self.key)
-            else:
-                print("No arrow")
