@@ -23,11 +23,10 @@ class Arrow_Worker():
         arrowThread.start()
 
     def FindArrow(self, Screen):
-        while self.running:
-            pixel = Screen.getpixel((self.posX, self.posY))
-            if str(pixel) == self.color:
-                print("Found arrow")
-                if os.name == 'nt':
-                    keyboard.press_and_release(self.key)
-                else:
-                    pyautogui.press(self.key)
+        pixel = Screen.getpixel((self.posX, self.posY))
+        if str(pixel) == self.color:
+            print("Found arrow")
+            if os.name == 'nt':
+                keyboard.press_and_release(self.key)
+            else:
+                pyautogui.press(self.key)
